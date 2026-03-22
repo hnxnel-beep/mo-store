@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mo Store</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont;
+  background: #0d0d0d;
+  color: white;
+}
+
+header {
+  padding: 20px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.container {
+  padding: 15px;
+}
+
+.card {
+  background: #1c1c1e;
+  border-radius: 16px;
+  padding: 15px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.card img {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  margin-right: 15px;
+}
+
+.info {
+  flex: 1;
+}
+
+.info h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.info p {
+  margin: 5px 0;
+  color: #aaa;
+  font-size: 14px;
+}
+
+button {
+  background: #0a84ff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+}
+
+.search {
+  padding: 10px;
+  width: 90%;
+  margin: 10px auto;
+  display: block;
+  border-radius: 10px;
+  border: none;
+  background: #2c2c2e;
+  color: white;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>🔥 Mo Store</header>
+
+<input class="search" placeholder="Search apps..." onkeyup="searchApp(this.value)">
+
+<div class="container" id="apps">
+
+  <div class="card">
+    <img src="https://via.placeholder.com/60">
+    <div class="info">
+      <h3>App 1</h3>
+      <p>Best tweaked app</p>
+    </div>
+    <button onclick="installApp('https://yourlink.com/app1.ipa')">GET</button>
+  </div>
+
+  <div class="card">
+    <img src="https://via.placeholder.com/60">
+    <div class="info">
+      <h3>App 2</h3>
+      <p>Premium unlocked</p>
+    </div>
+    <button onclick="installApp('https://yourlink.com/app2.ipa')">GET</button>
+  </div>
+
+</div>
+
+<script>
+function installApp(url){
+  window.location.href = url;
+}
+
+function searchApp(query){
+  let cards = document.querySelectorAll('.card');
+  query = query.toLowerCase();
+
+  cards.forEach(card => {
+    let text = card.innerText.toLowerCase();
+    card.style.display = text.includes(query) ? "flex" : "none";
+  });
+}
+</script>
+
+</body>
+</html>
