@@ -1,126 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
-  <link rel="manifest" href="manifest.json">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mo Store</title>
-
-<style>
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont;
-  background: #0d0d0d;
-  color: white;
-}
-
-header {
-  padding: 20px;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.container {
-  padding: 15px;
-}
-
-.card {
-  background: #1c1c1e;
-  border-radius: 16px;
-  padding: 15px;
-  margin-bottom: 15px;
-  display: flex;
-  align-items: center;
-}
-
-.card img {
-  width: 60px;
-  height: 60px;
-  border-radius: 12px;
-  margin-right: 15px;
-}
-
-.info {
-  flex: 1;
-}
-
-.info h3 {
-  margin: 0;
-  font-size: 18px;
-}
-
-.info p {
-  margin: 5px 0;
-  color: #aaa;
-  font-size: 14px;
-}
-
-button {
-  background: #0a84ff;
-  border: none;
-  padding: 8px 15px;
-  border-radius: 10px;
-  color: white;
-  font-weight: bold;
-}
-
-.search {
-  padding: 10px;
-  width: 90%;
-  margin: 10px auto;
-  display: block;
-  border-radius: 10px;
-  border: none;
-  background: #2c2c2e;
-  color: white;
-}
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>متجري الشخصي</title>
+    <style>
+        body { 
+            background-color: #000; 
+            color: #fff; 
+            font-family: -apple-system, sans-serif; 
+            padding: 20px; 
+            margin: 0;
+        }
+        h1 { font-size: 32px; margin-bottom: 30px; }
+        .app-card {
+            background: #1c1c1e;
+            border-radius: 18px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        .app-info { display: flex; align-items: center; gap: 15px; }
+        .icon-box {
+            width: 60px; height: 60px;
+            background: #2c2c2e;
+            border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 30px;
+        }
+        .app-details h3 { margin: 0; font-size: 18px; }
+        .app-details p { margin: 5px 0 0; color: #8e8e93; font-size: 14px; }
+        .get-btn {
+            background: #2c2c2e;
+            color: #0a84ff;
+            border: none;
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
 </head>
-
 <body>
 
-<header>🔥 Mo Store</header>
+    <h1>المتجر</h1>
 
-<input class="search" placeholder="Search apps..." onkeyup="searchApp(this.value)">
-
-<div class="container" id="apps">
-
-  <div class="card">
-    <img src="https://via.placeholder.com/60">
-    <div class="info">
-      <h3>App 1</h3>
-      <p>Best tweaked app</p>
+    <div class="app-card">
+        <div class="app-info">
+            <div class="icon-box">🚀</div>
+            <div class="app-details">
+                <h3>تطبيق الأول</h3>
+                <p>وصف بسيط للتطبيق</p>
+            </div>
+        </div>
+        <button class="get-btn">GET</button>
     </div>
-    <button onclick="installApp('https://yourlink.com/app1.ipa')">GET</button>
-  </div>
-
-  <div class="card">
-    <img src="https://via.placeholder.com/60">
-    <div class="info">
-      <h3>App 2</h3>
-      <p>Premium unlocked</p>
-    </div>
-    <button onclick="installApp('https://yourlink.com/app2.ipa')">GET</button>
-  </div>
-
-</div>
-
-<script>
-function installApp(url){
-  window.location.href = url;
-}
-
-function searchApp(query){
-  let cards = document.querySelectorAll('.card');
-  query = query.toLowerCase();
-
-  cards.forEach(card => {
-    let text = card.innerText.toLowerCase();
-    card.style.display = text.includes(query) ? "flex" : "none";
-  });
-}
-</script>
 
 </body>
 </html>
