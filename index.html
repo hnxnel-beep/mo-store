@@ -1,4 +1,4 @@
-حيدر رياض ياكله: <!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -88,6 +88,7 @@ button.install {
   <button onclick="showCategory('all')">All</button>
   <button onclick="showCategory('social')">Social</button>
   <button onclick="showCategory('games')">Games</button>
+   <button onclick="showCategory('paid')">paid</button>
 </div>
 
 <div class="container" id="apps"></div>
@@ -142,8 +143,7 @@ function showCategory(category){
       `;
     }
   });
-}
-[3/23/2026 4:04 AM] محمد اخوي: function installApp(link){
+function installApp(link){
   if(link === "#"){
     alert("حط رابط IPA هنا");
   } else {
