@@ -1,62 +1,159 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
+[3/23/2026 4:04 AM] محمد اخوي: <!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>متجري الشخصي</title>
-    <style>
-        body { 
-            background-color: #000; 
-            color: #fff; 
-            font-family: -apple-system, sans-serif; 
-            padding: 20px; 
-            margin: 0;
-        }
-        h1 { font-size: 32px; margin-bottom: 30px; }
-        .app-card {
-            background: #1c1c1e;
-            border-radius: 18px;
-            padding: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 15px;
-        }
-        .app-info { display: flex; align-items: center; gap: 15px; }
-        .icon-box {
-            width: 60px; height: 60px;
-            background: #2c2c2e;
-            border-radius: 12px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 30px;
-        }
-        .app-details h3 { margin: 0; font-size: 18px; }
-        .app-details p { margin: 5px 0 0; color: #8e8e93; font-size: 14px; }
-        .get-btn {
-            background: #2c2c2e;
-            color: #0a84ff;
-            border: none;
-            padding: 6px 20px;
-            border-radius: 20px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mo Store</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: -apple-system;
+  background: #0d0d0d;
+  color: white;
+}
+
+header {
+  padding: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+  background: #1c1c1e;
+  padding: 10px;
+}
+
+.nav button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+}
+
+.container {
+  padding: 10px;
+}
+
+.card {
+  background: #1c1c1e;
+  border-radius: 15px;
+  padding: 12px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.card img {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  margin-right: 10px;
+}
+
+.info {
+  flex: 1;
+}
+
+.info h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.info p {
+  margin: 3px 0;
+  font-size: 13px;
+  color: #aaa;
+}
+
+button.install {
+  background: #0a84ff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 10px;
+  color: white;
+}
+
+</style>
 </head>
+
 <body>
 
-    <h1>المتجر</h1>
+<header>🔥 Mo Store</header>
 
-    <div class="app-card">
-        <div class="app-info">
-            <div class="icon-box">🚀</div>
-            <div class="app-details">
-                <h3>تطبيق الأول</h3>
-                <p>وصف بسيط للتطبيق</p>
-            </div>
+<div class="nav">
+  <button onclick="showCategory('all')">All</button>
+  <button onclick="showCategory('social')">Social</button>
+  <button onclick="showCategory('games')">Games</button>
+</div>
+
+<div class="container" id="apps"></div>
+
+<script>
+
+const apps = [
+
+/* ===== SOCIAL (10 تطبيقات) ===== */
+
+{name:"WhatsApp++", desc:"Modified WhatsApp", cat:"social", link:"#", img:"https://via.placeholder.com/60"},
+{name:"Instagram++", desc:"Download media", cat:"social", link:"#", img:"https://via.placeholder.com/60"},
+{name:"TikTok++", desc:"No watermark", cat:"social", link:"#", img:"https://via.placeholder.com/60"},
+{name:"Snapchat++", desc:"Extra features", cat:"social", link:"#", img:"https://via.placeholder.com/60"},
+{name:"Facebook++", desc:"Premium features", cat:"social", link:"#", img:"https://via.placeholder.com/60"},
+{name:"Messenger++", desc:"Unlocked features", cat:"social", link:"#", img:"https://via.placeholder.com/60"},
+{name:"Telegram++", desc:"Advanced tools", cat:"social", link:"#", img:"https://via.placeholder.com/60"},
+{name:"Twitter++", desc:"No ads", cat:"social", link:"#", img:"https://via.placeholder.com/60"},
+{name:"YouTube++", desc:"No ads + download", cat:"social", link:"#", img:"https://via.placeholder.com/60"},
+{name:"Discord++", desc:"Premium unlocked", cat:"social", link:"#", img:"https://via.placeholder.com/60"},
+
+/* ===== GAMES (10 تطبيقات) ===== */
+
+{name:"PUBG Hack", desc:"Unlimited features", cat:"games", link:"#", img:"https://via.placeholder.com/60"},
+{name:"COD Mobile Hack", desc:"Aimbot + more", cat:"games", link:"#", img:"https://via.placeholder.com/60"},
+{name:"Clash of Clans Mod", desc:"Unlimited gems", cat:"games", link:"#", img:"https://via.placeholder.com/60"},
+{name:"Subway Surfers Mod", desc:"Unlimited coins", cat:"games", link:"#", img:"https://via.placeholder.com/60"},
+{name:"Among Us Mod", desc:"All unlocked", cat:"games", link:"#", img:"https://via.placeholder.com/60"},
+{name:"Minecraft Mod", desc:"Full version", cat:"games", link:"#", img:"https://via.placeholder.com/60"},
+{name:"Free Fire Hack", desc:"God mode", cat:"games", link:"#", img:"https://via.placeholder.com/60"},
+{name:"Hill Climb Mod", desc:"Unlimited fuel", cat:"games", link:"#", img:"https://via.placeholder.com/60"},
+{name:"Temple Run Mod", desc:"Unlimited coins", cat:"games", link:"#", img:"https://via.placeholder.com/60"},
+{name:"Candy Crush Mod", desc:"Unlimited lives", cat:"games", link:"#", img:"https://via.placeholder.com/60"}
+
+];
+
+function showCategory(category){
+  const container = document.getElementById("apps");
+  container.innerHTML = "";
+
+  apps.forEach(app => {
+    if(category === "all" || app.cat === category){
+      container.innerHTML += `
+      <div class="card">
+        <img src="${app.img}">
+        <div class="info">
+          <h3>${app.name}</h3>
+          <p>${app.desc}</p>
         </div>
-        <button class="get-btn">GET</button>
-    </div>
+        <button class="install" onclick="installApp('${app.link}')">GET</button>
+      </div>
+      `;
+    }
+  });
+}
+[3/23/2026 4:04 AM] محمد اخوي: function installApp(link){
+  if(link === "#"){
+    alert("حط رابط IPA هنا");
+  } else {
+    window.location.href = link;
+  }
+}
+
+showCategory("all");
+
+</script>
 
 </body>
 </html>
